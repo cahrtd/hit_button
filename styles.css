@@ -9,7 +9,7 @@
   height: 100vh;
 }
 
-.startButton {
+.button {
   font:
     36px "times new roman",
     serif;
@@ -27,4 +27,19 @@
   align-items: center;
   text-align: center;
   margin: auto;
+}
+
+button:active {
+  animation: 0.3s linear gummy-btn-press;
+}
+
+@keyframes gummy-btn-press {
+  75% {
+    transform: scale(0.85);
+    border-radius: 32px;
+  }
+  100% {
+    transform: scale(0.9);
+    border-radius: 20px;
+  }
 }

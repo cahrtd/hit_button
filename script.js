@@ -1,4 +1,9 @@
-let startButton = document.getElementById("startButton");
+const button = document.getElementById("button");
+
+function btnFont(fonts) {
+  const randomFt = Math.floor(Math.random() * fonts.length);
+  return fonts[randomFt];
+}
 
 const fonts = [
   "Barriecito",
@@ -18,6 +23,11 @@ const fonts = [
   "Kings",
 ];
 
+function btnColor(colors) {
+  const randomClr = Math.floor(Math.random() * colors.length);
+  return colors[randomClr];
+}
+
 const colors = [
   "#FFA4A4",
   "#BADFDB",
@@ -36,3 +46,13 @@ const colors = [
   "#D0F4DE",
   "#FBC4AB",
 ];
+
+
+function BtnChange() {
+  const randomColor = btnColor(colors);
+  const randomFont = btnFont(fonts);
+  button.style.color = randomColor;
+  button.style.fontFamily = `${randomFont}, serif`;
+}
+
+button.addEventListener("click", BtnChange);
