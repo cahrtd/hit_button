@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.startButton {
+  font:
+    36px "times new roman",
+    serif;
+  text-transform: uppercase;
+  color: #000;
+  border: #000 2px solid;
+  border-radius: 12px;
+  background-color: #fff;
+  width: 260px;
+  height: 80px;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
