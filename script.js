@@ -1,4 +1,5 @@
 const button = document.getElementById("button");
+let clickCount = 0;
 
 function btnFont(fonts) {
   const randomFt = Math.floor(Math.random() * fonts.length);
@@ -47,12 +48,27 @@ const colors = [
   "#FBC4AB",
 ];
 
-
 function BtnChange() {
   const randomColor = btnColor(colors);
   const randomFont = btnFont(fonts);
   button.style.color = randomColor;
-  button.style.fontFamily = `${randomFont}, serif`;
+  button.style.fontFamily = randomFont;
 }
 
-button.addEventListener("click", BtnChange);
+const additionalBtns = document.getElementById("additional-buttons");
+const btnFirst = document.getElementById("first");
+const btnSecond = document.getElementById("second");
+const btnThird = document.getElementById("third");
+
+button.addEventListener("click", () => {
+  clickCount++;
+  BtnChange();
+  console.log(clickCount);
+
+  if (clickCount >= 5) {
+    additionalBtns.style.opacity = "1";
+    additionalBtns.style.pointerEvents = "auto";
+    console.log("hi");
+  }
+});
+ 

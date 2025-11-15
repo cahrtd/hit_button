@@ -2,11 +2,26 @@
   box-sizing: border-box;
 }
 
+body {
+  position: relative;
+  height: 100vh;
+}
+
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   height: 100vh;
+  flex-direction: column;
+}
+/* MAIN BUTTON */
+
+.main-button {
+  display: block;
+  position: absolute;
+  bottom: 100px; /* distance from bottom */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .button {
@@ -22,11 +37,9 @@
   height: 80px;
   cursor: pointer;
   overflow: hidden;
-  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: auto;
 }
 
 button:active {
@@ -42,4 +55,38 @@ button:active {
     transform: scale(0.9);
     border-radius: 20px;
   }
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* SEASON BUTTONS */
+
+.additional-buttons {
+  opacity: 0; /* hides them until user discover them in th process of a game */
+  display: flex;
+  pointer-events: none;
+  gap: 10rem;
+  position: absolute;
+  top: 40%; /* roughly center */
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.additional-button {
+  opacity: 0; /* hides them until user discover them in th process of a game */
+  border: #000 2px solid;
+  border-radius: 12px;
+  background-color: #fff;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+  display: inline;
+}
+
+/* small transition for the additional buttons appearing */
+.additional-buttons {
+  transition: opacity 240ms ease;
 }
